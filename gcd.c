@@ -1,43 +1,14 @@
-/**
- * Euclidian Algorithm
- *
- * The Euclidean algorithm (also called Euclid's algorithm) is an
- * algorithm to determine the greatest common divisor of two integers.
- */
-#include <stdlib.h>
-#include <string.h>
+/*
+ce programme permet de trouver le plus grand diviseur commun en entre deux nombres 
+*/
 
-int gcd(int a, int b) {
-  int k;
-  while (b != 0) {
-    r = b;
-    b = b % a;
-    a = r;
-  }
-  return a;
-}
-
-int main(int argc, char* argv[]) {
-    if (argc <= 2) {
-        return -1;
-    }
-
-    int a = atoi(argv[1]);
-    int b = atoi(argv[2]);
-
-    int result = gcd(a, b);
-
-    printf("%d\n", result + 5);
-
-    return 0
-}
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-int gcd(int a, int b) {
-  int r;
-  while (b != 0) {
-       r = a % b;
+#include <stdlib.h>      // ici j'inclus un bibliothèque pour permettre l'utilisation de gérer la mémoire, convertir des chaines en nombre
+#include <string.h>      // cette bibliothèque permet de manipuler des chaines de caractères
+#include <stdio.h>       // permet de lire et écrire des donnée notament utile dans ce code pour la focntion printf
+int gcd(int a, int b) {    // permet en utilisant la fonction gcd dans le terminal de rentrer deux donnée dans mon code soit a et b
+  int r;                   // j'inclus la fonction r qui est le reste
+  while (b != 0) {         // b doit être différent de 0
+       r = a % b;          // permet de calculer le reste de la division
        a = b;
        b = r;
   }
